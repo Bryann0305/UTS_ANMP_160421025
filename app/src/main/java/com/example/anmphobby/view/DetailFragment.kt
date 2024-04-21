@@ -33,9 +33,7 @@ class DetailFragment : Fragment()  {
         binding.textTitle.text = title
         binding.textAuthor.text = "@"+author
         binding.textDescriptionLong.text = descriptionLong
-        Picasso.get()
-            .load(image)
-            .into(binding.imageView2)
+        Picasso.get().load(image).into(binding.imageView2)
     }
 
 
