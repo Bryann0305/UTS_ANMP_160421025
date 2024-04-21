@@ -24,7 +24,7 @@ class HobbyViewModel (application: Application): AndroidViewModel(application) {
         modelLoadErrorLD.value = false
         loadingLD.value = true
         queue = Volley.newRequestQueue(getApplication())
-        val url = "http://10.0.2.2/hobbys.json"
+        val url = "http://10.0.2.2/Komik.json"
         val stringRequest = StringRequest(
             Request.Method.GET, url,
             {

@@ -30,7 +30,6 @@ class HobbyListAdapter (val hobbyList:ArrayList<Model>)
             Navigation.findNavController(it).navigate(action)
         }
 
-
     }
     override fun getItemCount(): Int {
         return hobbyList.size
