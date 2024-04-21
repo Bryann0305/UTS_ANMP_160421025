@@ -15,7 +15,7 @@ import com.example.anmphobby.viewmodel.HobbyViewModel
 
 class HomeFragment : Fragment() {
     private lateinit var viewModel: HobbyViewModel
-    private val carListAdapter  = HobbyListAdapter(arrayListOf())
+    private val hobbyListAdapter = HobbyListAdapter(arrayListOf())
     private lateinit var binding: FragmentHomeBinding
 
 
@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
         viewModel.refresh()
 
         binding.recView.layoutManager = LinearLayoutManager(context)
-        binding.recView.adapter = carListAdapter
+        binding.recView.adapter = hobbyListAdapter
         binding.refreshLayout.setOnRefreshListener {
             binding.recView.visibility = View.GONE
             binding.txtError.visibility = View.GONE
@@ -47,7 +47,7 @@ class HomeFragment : Fragment() {
     }
     fun observeViewModel() {
         viewModel.modelLD.observe(viewLifecycleOwner, Observer {
-            carListAdapter.updateHobbyList(it)
+            hobbyListAdapter.updateHobbyList(it)
         })
         viewModel.modelLoadErrorLD.observe(viewLifecycleOwner, Observer {
             if(it == true) {
